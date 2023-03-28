@@ -72,6 +72,6 @@ jobs:
         run: |
           git config --local user.email "hsolicha@gmail.com"
           git config --local user.name "hsolicha"
-					git add .
+          git add .
           git commit -am "New image version, branch: staging, tag: ${{ env.VERSION }}"
           git push --force origin
