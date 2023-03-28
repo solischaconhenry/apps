@@ -45,7 +45,7 @@ jobs:
       - uses: actions/checkout@v3
         name: Checkout OPS code
         with:
-          repository: ${{ env.OPS_REPO }}
+          repository: ${{ env.DEPLOY_REPO }}
           ssh-key: ${{ secrets.OPS_TOKEN }}
 
       - name: test
