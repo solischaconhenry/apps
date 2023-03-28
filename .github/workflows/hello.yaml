@@ -16,7 +16,7 @@ jobs:
 
       - name: This Job has succeeded?
         if: ${{ success() }}
-        run: echo "Job Succeded!!!"
+        run: return 1
 
       - name: The job has failed?
         if: ${{ failure() }}
