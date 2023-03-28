@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print-to-screen
-        run: echo "Hello World ${{env.TEXT}}!"
+        run: echo "Hello World ${{env.TEXT}} - ${{secrets.SECRET_NAME}}!"
