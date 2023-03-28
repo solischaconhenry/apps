@@ -4,9 +4,12 @@ on:
   push:
     branches: ["stage"]
 
+env:
+  TEXT: "Henry Solis"
+
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
       - name: print-to-screen
-        run: echo "Hello World!"
+        run: echo "Hello World ${{env.TEXT}}!"
