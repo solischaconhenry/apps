@@ -51,3 +51,19 @@ jobs:
           repository: ${{env.OPS_REPO}}
           ssh-key: ${{secrets.OPS_TOKEN}}
           fetch-depth: 0
+
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v1
+        with:
+          kustomize-version: "3.6.1"
+      
+      - name: Update Kubernetes resources
+        run: |
+          cd public-api/overlays/stage
+
+					# Cambia la versión de la imagen
+          kustomize edit set image KUSTOMIZE-DEFINED=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+
+          # Optional: check yaml files Kustomized
+          kustomize build . > kustomized-apps.yml
+          cat kustomized-apps.yml
