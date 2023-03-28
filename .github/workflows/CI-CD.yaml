@@ -36,9 +36,6 @@ jobs:
           build-args: |
             APP_ENV=${{ secrets.APP_ENV }}
 
-      #- name: Run Test
-      #  run: docker run --rm --name api -p 3000:3000 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
-
   deploy:
     name: OPS
     runs-on: ubuntu-latest
@@ -70,3 +67,11 @@ jobs:
 
           kustomize build . > kustomized-apps.yml
           cat kustomized-apps.yml
+
+      - name: Commit files
+        run: |
+          git config --local user.email "hsolicha@gmail.com"
+          git config --local user.name "hsolicha"
+					git add .
+          git commit -am "New image version, branch: staging, tag: ${{ env.VERSION }}"
+          git push --force origin
