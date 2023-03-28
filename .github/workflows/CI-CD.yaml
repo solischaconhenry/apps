@@ -8,7 +8,7 @@ env:
   REGISTRY: hsolicha
   IMAGE_NAME: kubelabs_publicapi2
   DEPLOY_BRANCH: main
-  DEPLOY_REPO: hsolicha/ops
+  DEPLOY_REPO: solischaconhenry/ops
   VERSION: 2.0.0
 
 jobs:
