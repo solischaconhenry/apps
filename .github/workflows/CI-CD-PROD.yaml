@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: kubelabs_publicapi2
   DEPLOY_BRANCH: main
   DEPLOY_REPO: solischaconhenry/ops
-  VERSION: 2.0.0
+  VERSION: 5.0.0
 
 jobs:
 
